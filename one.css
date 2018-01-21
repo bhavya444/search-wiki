@@ -1,0 +1,32 @@
+.mainbody {
+
+background-color:  #182d46  ;
+color: white;
+
+}
+
+#insidebody{
+background-color:   #0a1625 ;
+border-style: groove;
+padding-bottom: 15px;
+padding-top: 15px;
+border-bottom-right-radius:25px;
+border-bottom-left-radius:25px;
+}
+
+.inside1stdiv {
+ font-family:'Cinzel', serif;
+ text-transform: uppercase;
+ font-size: 50px;
+
+}
+
+#searchterm {
+width: 50%;
+color: black;
+font-family:'Alegreya', serif;
+}
+
+#results {
+text-align: left;
+}

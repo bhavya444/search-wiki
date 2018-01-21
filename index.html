@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="one.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Cinzel" rel="stylesheet"> 
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<title> SEARCH ENGINE</TITLE>
+</head>
+<body class="mainbody">
+<div class="jumbotron jumbotron-fluid" id="insidebody">
+<h1 class="inside1stdiv"><center> search engine<center></h1>
+</div>
+<br/>
+
+<center><input id="searchterm" type="text" name="search" /> </center>
+<div id="results"> </div>
+<ul class="list-group">
+<div id="container">
+
+<script type="text/javascript">
+
+      $("#searchterm").keyup(function(e){
+        var q = $("#searchterm").val();
+        $.getJSON("http://en.wikipedia.org/w/api.php?callback=?",
+        {
+          srsearch: q,
+          action: "query",
+          list: "search",
+          format: "json"
+        },
+        function(data) {
+          $("#results").empty();
+          $("#results").append("Results for: <b>" + q + "</b>");
+         
+          $.each(data.query.search, function(i,item){
+            
+            $("#results").append("<div><b><a href='http://en.wikipedia.org/wiki/ " + encodeURIComponent(item.title) + "'>" + item.title + "</a>" + ": " +"</b>"+ item.snippet + "</div>");
+          });
+        });
+      });
+   
+</script>
+</div>
+<br>
+</body>
+</html>
+
