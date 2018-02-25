@@ -8,4 +8,4 @@ Provide a word in the search box and retrieve its meaning and wikipedia link of 
 
 Developed using Javascript and JSON.
 
-Wiki api : http://en.wikipedia.org/w/api.php?callback=?
+Wiki api : http://en.wikipedia.org/w/api.php?callback=
